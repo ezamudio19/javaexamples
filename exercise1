@@ -16,30 +16,30 @@ public class exercise1 {
 //Replace this String with your name and favorite food!
 
  String name = "TheLegend27";
- String favFood = "waffles";
+ String favFood = "pizza";
 
 
 //Intergers are whole numbers that are either positive or negative, or 0.
 //Replace this integer with your age!
 
- int age = 46;
+ int age = 18;
 
 //Doubles are numbers that have decimals and are positive or negative
 //Replace this Double with the gas prices in Chicago
  
-Double gasPrice = 3.48;
+Double gasPrice = 3.56;
 
 //Boolean are values that are either true or false
 //Replace this boolean value with true or false for the following question
 
 //Are you a student at IIT?
 
-boolean yesOrNo = false;
+boolean yesOrNo = true;
 
 //Characters are values with 1 letter from A-Z and they use single quotes ''
 //Replace this char with your first and last initials
 
-char firstInitial = 'a';
+char firstInitial = 'e';
 char lastInitial = 'z';
 
 
