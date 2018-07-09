@@ -15,8 +15,8 @@ public class exercise1 {
 //Strings are alphanumerical words that inlcude nearly any character/
 //Replace this String with your name and favorite food!
 
- String name = "TheLegend27";
- String favFood = "pizza";
+ String name = "Edwin Zamudio";
+ String favFood = "Cheese";
 
 
 //Intergers are whole numbers that are either positive or negative, or 0.
