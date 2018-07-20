@@ -27,14 +27,16 @@ public class TicTacToe {
 	What variable would be used to tell if the game is over OR not?
 	Also make a counter variable that counts how many turns have passed
 	*/
-	
+	boolean isXTurn = false;
+    boolean gameEnd = false;
+    int count = 0;
 
 	/*
 	A Tic Tac Toe grid consists of 9 spaces. What can we use as a placeholder for each space?
 	*Hint* it's like a variable but with indexes.
 	Initiate one of thoses!
 	*/
-
+	char[] space = new char[9];
 	
 
 	/*
@@ -43,6 +45,9 @@ public class TicTacToe {
 	Create one of those with the same length as the one before!
 
 	*/
+     boolean[] isSpaceOpen = new boolean[9];
+      for(int i=0;i<=8;i++){
+        isSpaceOpen[i]=true;}
 
 	
 	//Now logically we are going to start but we need to determine who goes first! This is kinda done for you though (:
@@ -50,7 +55,7 @@ public class TicTacToe {
 
 
 	if(priority == 1){
-		//Place your boolean here to say if it's X's turn
+		isXTurn = true;
 		System.out.println("X goes first!");
 	} else {
 		System.out.println("O goes first!");
@@ -61,29 +66,44 @@ public class TicTacToe {
 	What can we use to repeat this process as long as the game isn't over?
 
 	*/
-
-	
-
+      while(count>=9){
+		count++;
 		//Let us know who's turn it is AFTER 1 turn has passed right here
-		
+        if(count> 1){
+          if(isXTurn == true)
+          	System.out.println("X's Turn");
+          	isXTurn = false;
+          if(isXTurn == false)
+            System.out.println("O's Turn");
+          	isXTurn = true;
+            }
 
 		//Show the tic tac toe board by filling in your corresponding indexes
-		System.out.println("[" +  /*index here*/ + "][" + /*index here*/+ "][" + /*index here*/ +"]");
-		System.out.println("[" + /*index here*/ + "][" + /*index here*/ + "][" + /*index here*/ +"]");
-		System.out.println("[" + /*index here*/ + "][" + /*index here*/ + "][" + /*index here*/ +"]");
+		System.out.println("[" + space[0] + "][" + space[1]+ "][" + space[2] +"]");
+		System.out.println("[" + space[3] + "][" + space[4] + "][" +space[5] +"]");
+		System.out.println("[" + space[6] + "][" + space[7]+ "][" + space[8] +"]");
 
 
 		//Prompt the user for an integer between 0 and 8(this will be for where they decide to move)
 		
 		int move = input.nextInt();
+        
 		
 		//Check if the number they put is greater than or equal to 0 AND less than 9.
 		//AND check if that space has not been occupied
 		//if the conditions are met, set that space to the corresponding value(X or O)
 		//If the conditions are NOT met then tell them they messed up and return. (Return nothing i.e : return;)
-		
-
+			if(move>=0&&move<=8&&isSpaceOpen[move]==true)
+            {
+              if(isXTurn==true)
+                space[move]='X';
+              else
+                space[move]='O';
+            }
+        		else
+            System.out.println("try again loser");
 			
+        
 			/*
 			Now check if the spaces for each possible way to win TicTacToe are occupied AND are equal;
 			You may need multiple if statements
@@ -92,10 +112,23 @@ public class TicTacToe {
 			Add 1 to the counter, and then change the value for the turn to true or false
 			And then pat yourself on the back!
 			*/
-					
-
-//DONT BE AFRAID TO AS FOR HELP!
-
+			if(space[1]==space[2]&&space[1]==space[0])
+              gameEnd = true;
+            if(space[3]==space[4]&&space[3]==space[5])
+              gameEnd = true;
+            if(space[6]==space[7]&&space[6]==space[8])
+              gameEnd = true;
+            if(space[0]==space[4]&&space[0]==space[8])
+              gameEnd = true;
+            if(space[6]==space[4]&&space[6]==space[2])
+              gameEnd = true;
+            if(space[0]==space[3]&&space[3]==space[6])
+              gameEnd = true;
+            if(space[1]==space[4]&&space[1]==space[7])
+              gameEnd = true;
+       		if(space[2]==space[5]&&space[2]==space[8])
+              gameEnd = true;
+      }
 	}
 
 }
